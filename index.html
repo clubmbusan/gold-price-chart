@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>금 시세 차트</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>금 20돈 시세 차트</h2>
+  <canvas id="goldChart" width="800" height="400"></canvas>
+
+  <script>
+    const ctx = document.getElementById('goldChart').getContext('2d');
+    const goldChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2024-08', '2024-09', '2024-10', '2024-11', '2024-12'], // X축 날짜
+        datasets: [{
+          label: '금 시세 (1돈, KRW)',
+          data: [440000, 460000, 500000, 520000, 540000], // 데이터 값
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: '날짜'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: '시세 (KRW)'
+            },
+            beginAtZero: false
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
